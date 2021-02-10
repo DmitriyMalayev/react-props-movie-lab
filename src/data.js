@@ -1,9 +1,9 @@
-const movieData = [
+const movieData = [  //Array of Movie Objects 
   {
     title: 'Choux and Maru go to Istanbul',
     IMDBRating: 3,
     genres: ['cats', 'adventure', 'romance'],
-    poster: 'choux-maru-istanbul'
+    poster: 'choux-maru-istanbul'   //Has a nickname as the value 
   },
   {
     title: 'Choux and Maru',

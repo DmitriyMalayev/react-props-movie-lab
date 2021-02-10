@@ -12,6 +12,7 @@ import ttm from '../assets/poster-imgs/the-trash-man.png'
 import React, { Component } from 'react';
 import CardFront from './CardFront.js';
 import CardBack from './CardBack.js';
+import exports from 'webpack'
 
 
 const posterMap = {
@@ -30,14 +31,24 @@ const posterMap = {
 export default class MovieCard extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div className="movie-card">
         {/* which component should receive which props? */}
-        <CardFront />
-        <CardBack />
+        
+        <CardFront poster={posterMap[this.props.poster]} />  
+        {/* We are using posterMap to access the URL and we take the URL that's passed in and assign it to each moviecard front */}
+      
+        <CardBack title={this.props.title} genres={this.props.genres} IMDBRating={this.props.genres}/>
       </div>
     )
   }
 }
 
+MovieCard.defaultProps = {
+  title: "Unknown",
+  genres: ["No Genre(s) Found"],
+  IMDBRating: null,
+  poster: "default"
+};
 // Don't forget your default props!
